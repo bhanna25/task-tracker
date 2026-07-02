@@ -1,8 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const Task = require('./models/Task');
-require('dotenv').config();
+
 
 const app = express();
 const PORT = process.env.PORT || 10000;
@@ -28,6 +29,6 @@ app.get('/', (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server is blasting off on port ${PORT}`);
 });
